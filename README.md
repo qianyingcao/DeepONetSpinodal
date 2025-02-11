@@ -1,5 +1,5 @@
 # Characterization and Inverse Design of Stochastic Mechanical Metamaterials Using Neural Operators
-This repo contains a PyTorch implementation for the paper [Characterization and Inverse Design of Stochastic Mechanical Metamaterials Using Neural Operators] by Hanxun Jin, Boyu Zhang (https://scholar.google.com/citations?user=LPMJaU4AAAAJ&hl=en&oi=ao), Qianying Cao (https://scholar.google.com/citations?user=OrdbclEAAAAJ&hl=en&oi=sra), 
+This repo contains a PyTorch implementation for the paper [Characterization and Inverse Design of Stochastic Mechanical Metamaterials Using Neural Operators] by Hanxun Jin, [Boyu Zhang] (https://scholar.google.com/citations?user=LPMJaU4AAAAJ&hl=en&oi=ao), Qianying Cao (https://scholar.google.com/citations?user=OrdbclEAAAAJ&hl=en&oi=sra), 
 Enrui Zhang (https://scholar.google.com/citations?user=N8UvX0cAAAAJ&hl=en&oi=sra), Aniruddha Bora (https://scholar.google.com/citations?user=4OMm56YAAAAJ&hl=en&oi=ao), Sridhar Krishnaswamy (https://scholar.google.com/citations?user=QNp27o0AAAAJ&hl=en&oi=ao), George Em Karniadakis (https://scholar.google.com/citations?user=yZ0-ywkAAAAJ&hl=en&oi=sra), and Horacio D. Espinosa (https://scholar.google.com/citations?user=ABHMq8sAAAAJ&hl=en&oi=ao).
 
 ---
