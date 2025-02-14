@@ -25,7 +25,10 @@ derived directly from experimental insights.
 ---
 
 # Code
-This website offers the code to carry out the forward and inverse design. The data is too large, which cannot be uploaded here. You can download the data from zenodo.
+This website offers the codes and data to carry out the forward and inverse design. 
+
+# Requirement
+See the requirement.txt.
 
 # Citations
 ```
