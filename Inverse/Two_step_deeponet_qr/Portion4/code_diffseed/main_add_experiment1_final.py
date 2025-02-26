@@ -40,20 +40,14 @@ experiment3z = data_array[:,16:18]
 experiment4x = data_array[:,18:20]
 experiment4y = data_array[:,20:22]
 experiment4z = data_array[:,22:24]
-experiment5x = data_array[:,24:26]
-experiment5y = data_array[:,26:28]
-experiment5z = data_array[:,28:30]
-experiment6x = data_array[:,30:32]
-experiment6y = data_array[:,32:34]
-experiment6z = data_array[:,34:36]
-experiment7x = data_array[:,36:38]
-experiment7y = data_array[:,38:40]
-experiment7z = data_array[:,40:42]
 
 #data = read_data()
 data = torch.load('data')
 strain, stress_out_targets0, phase_pool_all, angle_pool_all, sample_id_pool_all = data
 stress_out_targets = np.concatenate((stress_out_targets0[:3,:,:,:],stress_out_targets0[4:,:,:,:]), axis=0)
+
+stress_out_targets = np.concatenate((stress_out_targets[0:1,:,:,:],stress_out_targets[2:3,:,:,:],stress_out_targets[5:6,:,:,:],stress_out_targets[6:7,:,:,:]), axis=0)
+
 
 print('Target stress shape:{}'.format(stress_out_targets.shape))
 #torch.save(data,'data')
@@ -164,7 +158,7 @@ stress_pool_pred_std = np.concatenate(stress_pool_pred_std, axis=0)
 # print(stress_pool_pred.shape)
 #print(stress_pool_pred_std)
 
-num_designs = 7
+num_designs = 4
 idx_best_design_all = []
 for idesign in range(num_designs):
     stress_out_target = stress_out_targets[idesign]
@@ -193,7 +187,8 @@ print(angle_underlying_best_design_all)
 
 
 ### Stress-Strain Curve Comparison of Design ###
-fig, axs = plt.subplots(nrows = num_designs, ncols = 3, figsize = (3.2*3,3.0*num_designs))
+num_experiment = 4
+fig, axs = plt.subplots(nrows = num_experiment, ncols = 3, figsize = (3.2*3,3.0*num_experiment))
 L2_err_all = []
 L2_relerr_all = []
 for iplot in range(num_designs):
@@ -233,18 +228,8 @@ for iplot in range(num_designs):
         single_subplot(experiment4x, stress_target_plot[0], stress_pred_plot[0], stress_pred_std_plot[0], iplot, 0)
         single_subplot(experiment4y, stress_target_plot[1], stress_pred_plot[1], stress_pred_std_plot[1], iplot, 1)
         single_subplot(experiment4z, stress_target_plot[2], stress_pred_plot[2], stress_pred_std_plot[2], iplot, 2)
-    elif iplot == 4:
-        single_subplot(experiment5x, stress_target_plot[0], stress_pred_plot[0], stress_pred_std_plot[0], iplot, 0)
-        single_subplot(experiment5y, stress_target_plot[1], stress_pred_plot[1], stress_pred_std_plot[1], iplot, 1)
-        single_subplot(experiment5z, stress_target_plot[2], stress_pred_plot[2], stress_pred_std_plot[2], iplot, 2)
-    elif iplot == 5:
-        single_subplot(experiment6x, stress_target_plot[0], stress_pred_plot[0], stress_pred_std_plot[0], iplot, 0)
-        single_subplot(experiment6y, stress_target_plot[1], stress_pred_plot[1], stress_pred_std_plot[1], iplot, 1)
-        single_subplot(experiment6z, stress_target_plot[2], stress_pred_plot[2], stress_pred_std_plot[2], iplot, 2)
-    elif iplot == 6:
-        single_subplot(experiment7x, stress_target_plot[0], stress_pred_plot[0], stress_pred_std_plot[0], iplot, 0)
-        single_subplot(experiment7y, stress_target_plot[1], stress_pred_plot[1], stress_pred_std_plot[1], iplot, 1)
-        single_subplot(experiment7z, stress_target_plot[2], stress_pred_plot[2], stress_pred_std_plot[2], iplot, 2)
+
+
     
     diff = stress_pred_plot - stress_target_plot
     print(stress_pred_plot.shape)
