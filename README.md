@@ -28,7 +28,7 @@ derived directly from experimental insights.
 This website offers the codes and data to carry out the forward and inverse design. 
 
 # Requirement
-See the requirement.txt.
+See the requirement.txt. The Python version: 3.12.4
 
 # Citations
 ```
